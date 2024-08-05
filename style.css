@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(./images/wallpaperflare.com_wallpaper\(4\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 35px 35px 0 0;
+}
+
+input[type="text"] {
+    padding: 25px 15px 25px 15px;
+    width: 280px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    margin-bottom: 10px;
+}
+
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+    height: 75vh;
+}
+
+.error{
+    color: red;
+    font-size: 24px;
+}
+
+.weather-type {
+    font-size: 2.5em;
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.city {
+    font-size: 5em;
+}
+
+.degree {
+    font-size: 10em;
+    font-weight: 600;
+    width: 220px;
+    border-right: 4px solid rgb(92, 92, 92, 0.6);
+}
+
+.degree-type {
+    position: absolute;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.info{
+    gap: 18px;
+    display: flex;
+}
+
+.more-info{
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
