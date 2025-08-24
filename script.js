@@ -1,14 +1,16 @@
+const apiKey = 'LH86TBUBVKC354RFNZ9E4BY9H';
+
 async function fetchWeatherData(location = 'alaska', unit = 'metric') {
-    const apiKey = 'LH86TBUBVKC354RFNZ9E4BY9H';
+
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/?key=${apiKey}&unitGroup=${unit}&lang=en`;
-    
+
     try {
         const response = await fetch(url, { mode: 'cors' });
         if (!response.ok) {
             throw new Error(`Network response was not ok: ${response.statusText}`);
         }
         return await response.json();
-    } 
+    }
     catch (error) {
         return { error: error.message };
     }
@@ -17,7 +19,6 @@ async function fetchWeatherData(location = 'alaska', unit = 'metric') {
 async function extractWeatherData(location) {
     try {
         const weatherData = await fetchWeatherData(location);
-        console.log(weatherData);
 
         if (weatherData.error) {
             throw new Error(weatherData.error);
@@ -40,7 +41,7 @@ async function extractWeatherData(location) {
     }
 }
 
-async function weather(location){
+async function weather(location) {
     const data = await extractWeatherData(location);
     if (data.error) {
         displayError(data);
@@ -49,8 +50,8 @@ async function weather(location){
     }
 }
 
-function display(data, metric = 'uk'){
-    
+function display(data) {
+
 
     const icon = document.createElement('img');
     const status = document.querySelector('.weather-type');
@@ -78,7 +79,7 @@ function display(data, metric = 'uk'){
     status.append(icon);
 }
 
-function displayError(){
+function displayError() {
     const error = document.querySelector('.error');
     error.textContent = '*Invalid location';
 }
@@ -86,13 +87,13 @@ function displayError(){
 
 const form = document.getElementById('my-form');
 
-form.addEventListener('submit', (e) =>{
+form.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = document.querySelector('form input').value;
     weather(location);
 });
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', () => {
     weather();
 });
 
