@@ -1,6 +1,7 @@
 # Weather-app
 ![Restaurant img ](screenshot.png)
 ### weather app made with HTML, CSS and JS
+### [Live Demo](https://weather-app-gold-one-22.vercel.app/)
 ### Features
 * Search cities worldwide.
 
